@@ -1,0 +1,25 @@
+ sudo docker ps                         
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS                                   NAMES
+133ae9a3e350   web3      "docker-php-entrypoi…"   8 minutes ago   Up 8 minutes   0.0.0.0:7200->80/tcp, :::7200->80/tcp   recursing_haibt
+                                                                                                                      
+┌──(kali㉿kali)-[~/…/cuctf-2019-challenges-master(1)/cuctf-2019-challenges-master/web-exploitation/Web3]
+└─$ sudo docker stop 133ae9a3e350          
+133ae9a3e350
+                                                                                                                      
+┌──(kali㉿kali)-[~/…/cuctf-2019-challenges-master(1)/cuctf-2019-challenges-master/web-exploitation/Web3]
+└─$ sudo docker build -t web3 .  
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  13.82kB
+Step 1/2 : FROM php:7.2-apache
+ ---> c61d277263e1
+Step 2/2 : COPY src/ /var/www/html/
+ ---> fab1924b9ad8
+Successfully built fab1924b9ad8
+Successfully tagged web3:latest
+                                                                                                                      
+┌──(kali㉿kali)-[~/…/cuctf-2019-challenges-master(1)/cuctf-2019-challenges-master/web-exploitation/Web3]
+└─$ sudo docker run -d --rm -p 7200:80 web3
+147a820d42a55b002d31966c112c78c8383395d6649e2b991153b87c3a70a64f
