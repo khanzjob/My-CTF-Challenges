@@ -1,0 +1,9 @@
+version: "2"
+services:
+  web:
+    build: .
+    image: ctftraining/njctf_2017_web_be_admin
+    ports:
+      - "0.0.0.0:8085:80"
+    environment:
+      - FLAG=CTFTraining{CoColi_has_to_work_hard}
