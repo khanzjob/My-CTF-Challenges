@@ -1,0 +1,2 @@
+$ ./crackme123 o\`rrvnqc0
+Yes, o`rrvnqc0 is correct!
